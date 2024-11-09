@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/light_green">
+
+    <Button
+            android:id="@+id/historyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:text="View History" />
+
+    <CardView
+            android:id="@+id/cardNature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_below="@+id/historyButton">
+        <TextView android:text="Nature" />
+    </CardView>
+
+    <CardView
+            android:id="@+id/cardScience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_below="@+id/cardNature">
+        <TextView android:text="Science" />
+    </CardView>
+
+    <CardView
+            android:id="@+id/cardCS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_below="@+id/cardScience">
+        <TextView android:text="Computer Science" />
+    </CardView>
+</RelativeLayout>

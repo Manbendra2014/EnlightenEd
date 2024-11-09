@@ -15,7 +15,7 @@ MasterQuiz is an interactive quiz application that allows users to take quizzes 
    - The logo is shown for 2 seconds before transitioning to the Home Screen.
 
 ### 2. **Home Screen**
-   - Displays a list of **three topics**: Nature, Science, and Computer Science.
+   - Displays a list of **three topics** : Nature, Science, and Computer Science.
    - Each topic is shown in a card format with a light green background.
    - On clicking any card, the user is taken to the **Quiz Screen** for the selected topic.
    - A button on the top right leads to the **History Screen** to view past quiz results.
@@ -32,8 +32,8 @@ MasterQuiz is an interactive quiz application that allows users to take quizzes 
    - Displays the user’s **score** as a percentage and shows the number of correct answers out of the total questions answered.
    - The score is saved along with the **date** in Firebase as **history**.
    - Includes two options:
-     - **Play Again**: Restarts the quiz.
-     - **View History**: Leads to the **History Screen** to view previous scores.
+     - **Play Again** : Restarts the quiz.
+     - **View History** : Leads to the **History Screen** to view previous scores.
 
 ### 5. **History Screen**
    - Displays a list of the user’s past scores and quiz dates, fetched from Firebase.

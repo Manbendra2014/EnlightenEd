@@ -38,3 +38,27 @@ MasterQuiz is an interactive quiz application that allows users to take quizzes 
 ### 5. **History Screen**
    - Displays a list of the user’s past scores and quiz dates, fetched from Firebase.
    - This screen provides a history of the user's performance in the quizzes.
+
+## Screenshots
+
+### 1. **Flash Screen**
+
+![Flash Screen](Screenshots/Flash_Screen.png)
+
+### 2. **Home Screen**
+
+![Home Screen](Screenshots/Home_Screen.png)
+
+### 3. **Quiz Screen**
+
+![Nature Quiz Screen](Screenshots/Nature_Quiz_Screen.png)
+![Science Quiz Screen](Screenshots/Science_Quiz_Screen.png)
+![Computer Science Quiz Screen](Screenshots/Computer_Science_Quiz_Screen.png)
+
+### 4. **Score Summary Screen**
+
+![Score Summary Screen](Screenshots/Score_Summary_Screen.png)
+
+### 5. **History Screen**
+
+![History Screen](Screenshots/History_Screen.png)

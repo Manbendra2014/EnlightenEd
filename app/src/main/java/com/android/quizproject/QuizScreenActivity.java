@@ -9,16 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -31,14 +28,11 @@ public class QuizScreenActivity extends AppCompatActivity {
     private CountDownTimer timer;
     private TextView questionText, scoreText, timerText;
     private Button option1, option2, option3, option4;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_screen);
-
         db = FirebaseFirestore.getInstance();
-
         questionText = findViewById(R.id.questionText);
         scoreText = findViewById(R.id.scoreText);
         timerText = findViewById(R.id.timerText);
@@ -46,11 +40,9 @@ public class QuizScreenActivity extends AppCompatActivity {
         option2 = findViewById(R.id.option2);
         option3 = findViewById(R.id.option3);
         option4 = findViewById(R.id.option4);
-
         String topic = getIntent().getStringExtra("topic");
         loadQuestions(topic);
     }
-
     private void loadQuestions(String topic) {
         db.collection("questions")
                 .whereEqualTo("topic", topic)
@@ -60,15 +52,14 @@ public class QuizScreenActivity extends AppCompatActivity {
                         Question question = document.toObject(Question.class);
                         questions.add(question);
                     }
-                    Collections.shuffle(questions);  // Shuffle questions to get random order
+                    Collections.shuffle(questions);
                     if (questions.size() > 5) {
-                        questions = questions.subList(0, 5); // Limit to 5 random questions
+                        questions = questions.subList(0, 5);
                     }
                     displayQuestion();
                 })
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to load questions.", Toast.LENGTH_SHORT).show());
     }
-
     private void displayQuestion() {
         if (questionIndex < questions.size()) {
             Question question = questions.get(questionIndex);
@@ -77,16 +68,12 @@ public class QuizScreenActivity extends AppCompatActivity {
             option2.setText(question.getOptions().get(1));
             option3.setText(question.getOptions().get(2));
             option4.setText(question.getOptions().get(3));
-
-
             setOptionClickListeners(question);
-
             startTimer();
         } else {
             endQuiz();
         }
     }
-
     private void startTimer() {
         if (timer != null) timer.cancel();
         timer = new CountDownTimer(15000, 1000) {
@@ -94,7 +81,6 @@ public class QuizScreenActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 timerText.setText("Time: " + millisUntilFinished / 1000);
             }
-
             @Override
             public void onFinish() {
                 questionIndex++;
@@ -102,7 +88,6 @@ public class QuizScreenActivity extends AppCompatActivity {
             }
         }.start();
     }
-
     private void setOptionClickListeners(Question question) {
         View.OnClickListener listener = view -> {
             timer.cancel();
@@ -114,13 +99,11 @@ public class QuizScreenActivity extends AppCompatActivity {
             questionIndex++;
             displayQuestion();
         };
-
         option1.setOnClickListener(listener);
         option2.setOnClickListener(listener);
         option3.setOnClickListener(listener);
         option4.setOnClickListener(listener);
     }
-
     private void endQuiz() {
         Intent intent = new Intent(QuizScreenActivity.this, ScoreSummaryActivity.class);
         intent.putExtra("score", score);

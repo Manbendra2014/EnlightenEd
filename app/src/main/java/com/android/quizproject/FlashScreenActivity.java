@@ -11,14 +11,11 @@ public class FlashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flash_screen);
-
         ImageView logo = findViewById(R.id.amritaLogo);
-        logo.setImageResource(R.drawable.amrita_logo);  // Setting the locally stored image
-
-        // Display the logo for 2 seconds before moving to Home Screen
+        logo.setImageResource(R.drawable.amrita_logo);
         new Handler().postDelayed(() -> {
             startActivity(new Intent(FlashScreenActivity.this, HomeScreenActivity.class));
             finish();
-        }, 2000); // 2-second delay
+        }, 2000);
     }
 }

@@ -7,11 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,10 +73,11 @@ public class QuizScreenActivity extends AppCompatActivity {
         if (questionIndex < questions.size()) {
             Question question = questions.get(questionIndex);
             questionText.setText(question.getText());
-            option1.setText(question.getOptions()[0]);
-            option2.setText(question.getOptions()[1]);
-            option3.setText(question.getOptions()[2]);
-            option4.setText(question.getOptions()[3]);
+            option1.setText(question.getOptions().get(0));
+            option2.setText(question.getOptions().get(1));
+            option3.setText(question.getOptions().get(2));
+            option4.setText(question.getOptions().get(3));
+
 
             setOptionClickListeners(question);
 

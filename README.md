@@ -1,9 +1,9 @@
-# MasterQuiz - A Quiz Application
+# EnlightenEd - A Quiz Application
 
 ## Description
 
 <p align="justify">
-MasterQuiz is an interactive quiz application that allows users to take quizzes on different topics like Nature, Science, and Computer Science. The app fetches questions from Firebase Firestore, displays them in a multiple-choice format, and tracks the user's score in real-time. It also maintains a history of previous quiz attempts. The app has a visually appealing design with a simple user interface that ensures a smooth and engaging user experience.
+EnlightenEd is an interactive quiz application that allows users to take quizzes on different topics like Nature, Science, and Computer Science. The app fetches questions from Firebase Firestore, displays them in a multiple-choice format, and tracks the user's score in real-time. It also maintains a history of previous quiz attempts. The app has a visually appealing design with a simple user interface that ensures a smooth and engaging user experience.
 </p>
 
 ---
